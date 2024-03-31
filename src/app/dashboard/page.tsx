@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import Card, { Stat } from '../ui/dashboard/card';
+import SalesOverviewChart from '../ui/dashboard/sales-overview-chart';
+import SalesByRegionChart from '../ui/dashboard/sales-by-region-chart';
+import RegisteredUsersChart from '../ui/dashboard/registered-users-chart';
 
 export default async function Page() {
   const stats: Stat[] = [
@@ -54,6 +57,13 @@ export default async function Page() {
             change={stat.change}
           />
         ))}
+      </div>
+      <div className="grid gap-4 px-8 py-3 md:grid-cols-2 lg:grid-cols-6">
+        <SalesOverviewChart className="md:col-span-2 lg:col-span-4" />
+        <SalesByRegionChart className="md:col-span-2 lg:col-span-2" />
+      </div>
+      <div className="grid gap-4 px-8 py-3 lg:grid-cols-6">
+        <RegisteredUsersChart className="lg:col-span-2" premiumUsers={2804} basicUsers={742} />
       </div>
     </div>
   );

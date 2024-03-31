@@ -14,7 +14,7 @@ export default function Card({ title, value, valueType, change }: Stat) {
     <div className="justify flex flex-col gap-4 rounded-xl border px-5 pt-3 shadow-sm">
       <p className="text-lg font-bold">{title}</p>
       <p className="text-4xl font-bold">{formattedValue}</p>
-      <p className="flex items-center gap-3 text-black/60">
+      <p className="flex items-center gap-3 text-sm text-black/60">
         <span
           className={`inline-flex items-center rounded-md px-2 py-1 ${trendColor}`}
         >

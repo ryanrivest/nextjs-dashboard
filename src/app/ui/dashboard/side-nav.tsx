@@ -107,7 +107,7 @@ function Menu({
       {groups.map((group) => (
         <ul key={group.id} className="flex flex-col items-center px-4">
           {group.links.map((link) => (
-            <li key={link.href} className={clsx(expanded ? 'w-full' : '')}>
+            <li key={link.text} className={clsx(expanded ? 'w-full' : '')}>
               <a
                 href={link.href}
                 className={clsx(

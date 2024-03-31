@@ -10,7 +10,7 @@ export const formatNumber = (value: number) => {
 };
 
 export const formatPercent = (value: number) => {
-  return `${formatInteger(value)}%`;
+  return `${value}%`;
 };
 
 export const formatInteger = (value: number) => {
