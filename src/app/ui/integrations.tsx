@@ -13,7 +13,7 @@ export default function Integrations({ className }: { className?: string }) {
     },
     {
       name: 'HubSpot',
-      logo: '/hubspot-icon.svg',
+      logo: '/hubspot-icon.png',
       type: 'CRM',
       active: false,
     },
