@@ -27,6 +27,7 @@ export default function RootLayout({
             </main>
           </div>
         </ThemeProvider>
+        <bds />
       </body>
     </html>
   );
