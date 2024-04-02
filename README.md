@@ -2,7 +2,7 @@
 
 Dashboard app built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.nuxtjs.org/), [Iconify](https://github.com/iconify/iconify), [Chart.js](https://react-chartjs-2.js.org/), and TypeScript.
 
-🌤️ Live preview: https://nextjs-dashboard-gold-three-17.vercel.app/
+📊 Live preview: https://nextjs-dashboard-gold-three-17.vercel.app/
 
 ## Setup
 
