@@ -2,22 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-color: #000000;
-  --background-color: #ffffff;
-}
-
-@media (prefers-color-scheme: dark) {
-  /* :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  } */
-}
-
-body {
-  color: var(--foreground-color);
-  background: var(--background-color);
+@layer base {
+  body {
+    @apply bg-white text-black dark:bg-dark-blue dark:text-white;
+  }
 }
 
 @layer utilities {

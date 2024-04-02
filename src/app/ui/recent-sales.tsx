@@ -37,14 +37,14 @@ export default function RecentSales({ className }: { className?: string }) {
   ];
 
   return (
-    <div className={`${className} rounded-xl border px-5 pb-6 pt-3 shadow-sm`}>
+    <div className={`${className} rounded-xl border px-5 pb-6 pt-3 shadow-sm dark:bg-dark-blue dark:border-white/10`}>
       <div className="mb-3 text-lg font-bold">Recent Sales</div>
       <div className="relative grid w-full gap-8">
         {orders.map((order, index) => (
           <div className="flex items-center gap-4" key={index}>
             <div className="grid gap-1">
               <p className="text-sm font-medium leading-none">{order.name}</p>
-              <p className="text-sm text-black/60">{order.location}</p>
+              <p className="text-sm text-black/60 dark:text-white/60">{order.location}</p>
             </div>
             <div className="ml-auto font-bold">
               {formatCurrency(order.amount)}

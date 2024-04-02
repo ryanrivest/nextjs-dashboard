@@ -35,9 +35,9 @@ export default async function Page() {
 
   return (
     <div className="flex flex-col">
-      <header className="flex justify-between border-y px-8 md:border-t-0">
+      <header className="flex justify-between border-y px-8 md:border-t-0 dark:border-y-white/10 dark:bg-dark-blue">
         <h1 className="py-3 text-xl font-bold md:text-2xl">Dashboard</h1>
-        <div className="border-l py-3 pl-8">
+        <div className="border-l dark:border-l-white/10 py-3 pl-8">
           <Image
             src="/profile-icon.svg"
             width={32}

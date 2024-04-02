@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Icon } from '@iconify/react';
 import { clsx } from 'clsx';
 import { useState } from 'react';
+import DarkModeToggle from './dark-mode-toggle';
 
 interface NavLink {
   href?: string;
@@ -35,7 +36,7 @@ export default function SideNav() {
           <Icon icon="mdi:hamburger-menu" style={{ fontSize: '2rem' }} />
         </button>
         <button
-          className="ml-1 hidden h-6 w-6 rounded-md border text-black md:block"
+          className="ml-1 hidden h-6 w-6 rounded-md border text-black dark:border-white/10 dark:text-white md:block"
           onClick={toggleExpanded}
         >
           <Icon
@@ -88,6 +89,8 @@ export default function SideNav() {
           },
         ]}
       />
+
+      <DarkModeToggle className="mb-1 ml-2 mt-auto" />
     </div>
   );
 }
@@ -103,7 +106,10 @@ function Menu({
 }) {
   return (
     <div
-      className={clsx(opened ? 'block' : 'hidden', 'divide divide-y md:block')}
+      className={clsx(
+        opened ? 'block' : 'hidden',
+        'divide divide-y dark:divide-white/10 md:block',
+      )}
     >
       {groups.map((group) => (
         <ul key={group.id} className="flex flex-col items-center px-4">
@@ -114,7 +120,7 @@ function Menu({
                 className={clsx(
                   link.active
                     ? 'bg-blue/25 text-blue'
-                    : 'text-black/60 hover:bg-blue/25 hover:text-blue',
+                    : 'text-black/60 hover:bg-blue/25 hover:text-blue dark:text-white/60 dark:hover:text-white',
                   expanded ? 'flex' : 'inline-flex',
                   'my-3 h-9 cursor-pointer items-center rounded-md p-1.5 text-lg font-bold',
                 )}

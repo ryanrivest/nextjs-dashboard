@@ -53,7 +53,7 @@ export default function RegisteredUsersChart({
   };
 
   return (
-    <div className={`${className} rounded-xl border px-5 pb-6 pt-3 shadow-sm`}>
+    <div className={`${className} rounded-xl border px-5 pb-6 pt-3 shadow-sm dark:bg-dark-blue dark:border-white/10`}>
       <div className="text-lg font-bold">Registered Users</div>
       <div className="relative w-full py-2">
         <Doughnut data={data} options={options} />
@@ -65,7 +65,7 @@ export default function RegisteredUsersChart({
             />
           </div>
           <div className="text-2xl font-bold">{formattedTotalUsers}</div>
-          <div className="text-sm text-black/60">Total Users</div>
+          <div className="text-sm text-black/60 dark:text-white/60">Total Users</div>
         </div>
       </div>
       <ChartLegend basicUsers={basicUsers} premiumUsers={premiumUsers} />
@@ -91,13 +91,13 @@ export function ChartLegend({
         <div className="pb-1 text-sm font-bold">
           {formattedPremiumUsers}
         </div>
-        <div className="text-sm text-black/60">Premium Users</div>
+        <div className="text-sm text-black/60 dark:text-white/60">Premium Users</div>
       </div>
     </div>
     <div className="flex items-center gap-2 text-right">
       <div>
         <div className="pb-1 text-sm font-bold">{formattedBasicUsers}</div>
-        <div className="text-sm text-black/60">Basic Users</div>
+        <div className="text-sm text-black/60 dark:text-white/60">Basic Users</div>
       </div>
       <div className="py-2 bg-blue/60 w-1 h-[80%] rounded"></div>
     </div>

@@ -96,7 +96,9 @@ export default function SalesOverviewChart({
   }));
 
   return (
-    <div className={`${className} rounded-xl border px-5 pb-6 pt-3 shadow-sm`}>
+    <div
+      className={`${className} dark:bg-dark-blue rounded-xl border px-5 pb-6 pt-3 shadow-sm dark:border-white/10`}
+    >
       <div className="flex justify-between pb-2">
         <div className="text-lg font-bold">Sales Overview</div>
         <ChartLegend datasets={datasets} />
@@ -121,7 +123,7 @@ export function ChartLegend({
               className="relative"
               style={{ fontSize: '0.7rem', color: dataset.borderColor }}
             />
-            <span className="text-sm text-black/60">{dataset.label}</span>
+            <span className="text-sm text-black/60 dark:text-white/60">{dataset.label}</span>
           </div>
           <div className="font-bold">$50,345.67</div>
         </div>
