@@ -32,9 +32,15 @@ export default function SideNav() {
         <Link href="/">
           <FinDataLogo expanded={expanded} />
         </Link>
-        <button className="md:hidden" onClick={toggleOpened}>
-          <Icon icon="mdi:hamburger-menu" style={{ fontSize: '2rem' }} />
-        </button>
+
+        <span className="inline-flex items-center md:hidden">
+          <DarkModeToggle className="mr-2" />
+
+          <button onClick={toggleOpened}>
+            <Icon icon="mdi:hamburger-menu" style={{ fontSize: '2rem' }} />
+          </button>
+        </span>
+
         <button
           className="ml-1 hidden h-6 w-6 rounded-md border text-black dark:border-white/10 dark:text-white md:block"
           onClick={toggleExpanded}
@@ -90,7 +96,7 @@ export default function SideNav() {
         ]}
       />
 
-      <DarkModeToggle className="mb-1 ml-2 mt-auto" />
+      <DarkModeToggle className="mb-1 ml-2 mt-auto hidden md:inline-block" />
     </div>
   );
 }
