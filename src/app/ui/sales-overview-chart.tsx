@@ -11,7 +11,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import annotationPlugin from 'chartjs-plugin-annotation';
 import { Icon } from '@iconify/react';
 
 ChartJS.register(
@@ -22,7 +21,6 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  annotationPlugin,
 );
 
 export function generateSalesChartData() {
@@ -61,22 +59,6 @@ export function generateSalesChartData() {
 
 const data = generateSalesChartData();
 
-const annotations = Array.from({ length: 10 }, (_, i) => {
-  const annotation = {
-    type: 'box',
-    backgroundColor: i % 2 === 0 ? '#696ffb20' : '#696ffb0a',
-    borderWidth: 0,
-    xMax: i + 1,
-    xMin: i,
-    label: {
-      drawTime: 'afterDraw',
-      display: true,
-    },
-  };
-
-  return annotation;
-});
-
 const options = {
   responsive: true,
   maintainAspectRatio: true,
@@ -90,9 +72,6 @@ const options = {
     tooltip: {
       enabled: true,
       intersect: false,
-    },
-    annotation: {
-      annotations: annotations,
     },
   },
   scales: {
@@ -139,7 +118,7 @@ export function ChartLegend({
           <div className="inline-flex items-center">
             <Icon
               icon="carbon:dot-mark"
-              className="relative bottom-0.5"
+              className="relative"
               style={{ fontSize: '0.7rem', color: dataset.borderColor }}
             />
             <span className="text-sm text-black/60">{dataset.label}</span>

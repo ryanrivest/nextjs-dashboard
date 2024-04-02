@@ -8,15 +8,15 @@ export default function Card({ title, value, valueType, change }: Stat) {
   const trendColor = increased ? 'bg-light-green' : 'bg-light-red';
   const trendIcon = increased ? 'octicon:arrow-up-16' : 'octicon:arrow-down-16';
   const formattedValue = formatValue();
-  const formattedChange = `${Math.abs(change)}%`;
+  const formattedChange = `${formatPercent(Math.abs(change))}`;
 
   return (
-    <div className="justify flex flex-col gap-4 rounded-xl border px-5 pt-3 shadow-sm">
-      <p className="text-lg font-bold">{title}</p>
-      <p className="text-4xl font-bold">{formattedValue}</p>
-      <p className="flex items-center gap-3 text-sm text-black/60">
+    <div className="flex flex-col gap-4 rounded-xl border px-5 pt-3 pb-4 shadow-sm">
+      <div className="text-lg font-bold">{title}</div>
+      <div className="text-3xl font-bold">{formattedValue}</div>
+      <div className="flex items-center gap-3 text-xs text-black/60">
         <span
-          className={`inline-flex items-center rounded-md px-2 py-1 ${trendColor}`}
+          className={`inline-flex items-center rounded-md px-2 py-1 text-black ${trendColor}`}
         >
           <Icon
             icon={trendIcon}
@@ -26,8 +26,7 @@ export default function Card({ title, value, valueType, change }: Stat) {
           {formattedChange}
         </span>
         Compared to last month
-      </p>
-      <p></p>
+      </div>
     </div>
   );
 

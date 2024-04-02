@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { roboto } from '@/app/ui/fonts';
 import './globals.css';
+import SideNav from '@/app/ui/side-nav';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <div className="md:divide flex h-screen flex-col md:flex-row md:divide-x md:overflow-hidden">
+          <div className="w-full flex-none md:w-auto">
+            <SideNav />
+          </div>
+          <main className="flex-grow md:overflow-y-auto">{children}</main>
+        </div>
+      </body>
     </html>
   );
 }

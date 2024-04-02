@@ -6,6 +6,18 @@ import { Icon } from '@iconify/react';
 import { clsx } from 'clsx';
 import { useState } from 'react';
 
+interface NavLink {
+  href?: string;
+  icon: string;
+  text: string;
+  active?: boolean;
+}
+
+interface NavGroup {
+  id: string;
+  links: NavLink[];
+}
+
 export default function SideNav() {
   const [expanded, setExpanded] = useState(true);
   const [opened, setOpened] = useState(false);
@@ -15,7 +27,7 @@ export default function SideNav() {
 
   return (
     <div className={clsx(expanded ? 'md:w-64' : '', 'flex h-full flex-col')}>
-      <div className="text-blue flex items-center justify-between px-3 py-4">
+      <div className="flex items-center justify-between px-3 py-4 text-blue">
         <Link href="/">
           <FinDataLogo expanded={expanded} />
         </Link>
@@ -41,29 +53,28 @@ export default function SideNav() {
             id: 'main',
             links: [
               {
-                href: '/',
                 icon: 'material-symbols:space-dashboard-outline',
                 text: 'Dashboard',
                 active: true,
               },
-              { href: '/', icon: 'mdi:payment', text: 'Payment' },
-              { href: '/', icon: 'majesticons:users-line', text: 'Customers' },
-              { href: '/', icon: 'tabler:message-2', text: 'Messages' },
+              { icon: 'mdi:payment', text: 'Payment' },
+              { icon: 'majesticons:users-line', text: 'Customers' },
+              { icon: 'tabler:message-2', text: 'Messages' },
             ],
           },
           {
             id: 'secondary',
             links: [
-              { href: '/', icon: 'lets-icons:bag', text: 'Product' },
-              { href: '/', icon: 'basil:invoice-outline', text: 'Invoice' },
-              { href: '/', icon: 'akar-icons:statistic-up', text: 'Analytics' },
+              { icon: 'lets-icons:bag', text: 'Product' },
+              { icon: 'basil:invoice-outline', text: 'Invoice' },
+              { icon: 'akar-icons:statistic-up', text: 'Analytics' },
             ],
           },
           {
             id: 'thirdiary',
             links: [
-              { href: '/', icon: 'uil:setting', text: 'Settings' },
-              { href: '/', icon: 'ic:round-security', text: 'Security' },
+              { icon: 'uil:setting', text: 'Settings' },
+              { icon: 'ic:round-security', text: 'Security' },
               {
                 href: '/',
                 icon: 'material-symbols:help-outline',
@@ -73,24 +84,12 @@ export default function SideNav() {
           },
           {
             id: 'logout',
-            links: [{ href: '/', icon: 'basil:logout-solid', text: 'Log Out' }],
+            links: [{ icon: 'basil:logout-solid', text: 'Log Out' }],
           },
         ]}
       />
     </div>
   );
-}
-
-interface NavLink {
-  href: string;
-  icon: string;
-  text: string;
-  active?: boolean;
-}
-
-interface NavGroup {
-  id: string;
-  links: NavLink[];
 }
 
 function Menu({
@@ -103,7 +102,9 @@ function Menu({
   opened: boolean;
 }) {
   return (
-    <div className={clsx(opened ? 'block' : 'hidden', 'md:block divide divide-y')}>
+    <div
+      className={clsx(opened ? 'block' : 'hidden', 'divide divide-y md:block')}
+    >
       {groups.map((group) => (
         <ul key={group.id} className="flex flex-col items-center px-4">
           {group.links.map((link) => (
@@ -112,10 +113,10 @@ function Menu({
                 href={link.href}
                 className={clsx(
                   link.active
-                    ? 'text-blue bg-blue/25'
-                    : 'hover:bg-blue/25 hover:text-blue text-black/60',
+                    ? 'bg-blue/25 text-blue'
+                    : 'text-black/60 hover:bg-blue/25 hover:text-blue',
                   expanded ? 'flex' : 'inline-flex',
-                  'my-3 h-9 items-center rounded-md p-1.5 text-lg font-bold',
+                  'my-3 h-9 cursor-pointer items-center rounded-md p-1.5 text-lg font-bold',
                 )}
               >
                 <Icon
