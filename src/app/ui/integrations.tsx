@@ -38,7 +38,7 @@ export default function Integrations({ className }: { className?: string }) {
               </th>
               <th className="px-2 py-2.5 font-normal">Type</th>
               <th className="px-2 py-2.5 font-normal">Status</th>
-              <th className="hidden px-2 py-2.5 text-center font-normal md:block">
+              <th className="hidden px-2 py-2.5 text-center font-normal md:table-cell">
                 Settings
               </th>
             </tr>
@@ -79,7 +79,7 @@ export default function Integrations({ className }: { className?: string }) {
                     </span>
                   </div>
                 </td>
-                <td className="hidden border-b px-2 py-4 text-center align-middle dark:border-white/10 md:block">
+                <td className="hidden border-b px-2 py-4 text-center align-middle dark:border-white/10 md:table-cell">
                   <a className="inline-flex cursor-pointer justify-items-center gap-1">
                     Edit
                     <Icon
