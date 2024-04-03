@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { Icon } from '@iconify/react';
 
 export default function Integrations({ className }: { className?: string }) {
@@ -39,7 +38,9 @@ export default function Integrations({ className }: { className?: string }) {
               </th>
               <th className="px-2 py-2.5 font-normal">Type</th>
               <th className="px-2 py-2.5 font-normal">Status</th>
-              <th className="px-2 py-2.5 text-center font-normal">Settings</th>
+              <th className="hidden px-2 py-2.5 text-center font-normal md:block">
+                Settings
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -48,7 +49,7 @@ export default function Integrations({ className }: { className?: string }) {
                 <td className="border-b px-2 py-4 align-middle font-bold text-black dark:border-white/10 dark:text-white">
                   <div className="flex items-center">
                     <span className="mr-2 inline-block rounded border p-1 dark:border-white/10">
-                      <Image
+                      <img
                         src={integration.logo}
                         width={24}
                         height={24}
@@ -78,7 +79,7 @@ export default function Integrations({ className }: { className?: string }) {
                     </span>
                   </div>
                 </td>
-                <td className="border-b px-2 py-4 text-center align-middle dark:border-white/10">
+                <td className="hidden border-b px-2 py-4 text-center align-middle dark:border-white/10 md:block">
                   <a className="inline-flex cursor-pointer justify-items-center gap-1">
                     Edit
                     <Icon
