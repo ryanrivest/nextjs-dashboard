@@ -12,9 +12,9 @@ export default function Integrations({ className }: { className?: string }) {
       active: true,
     },
     {
-      name: 'HubSpot',
-      logo: '/hubspot-icon.png',
-      type: 'CRM',
+      name: 'Walmart',
+      logo: '/walmart-icon.svg',
+      type: 'Marketplace',
       active: false,
     },
     {
@@ -54,7 +54,6 @@ export default function Integrations({ className }: { className?: string }) {
                         height={24}
                         alt={`${integration.name} logo`}
                         className="inline-block"
-                        priority
                       />
                     </span>
                     {integration.name}

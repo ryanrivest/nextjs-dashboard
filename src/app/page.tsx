@@ -60,16 +60,16 @@ export default async function Page() {
         ))}
       </div>
       <div className="grid gap-4 px-8 py-3 md:grid-cols-2 lg:grid-cols-6">
-        <SalesOverviewChart className="md:col-span-2 lg:col-span-4" />
-        <RecentSales className="md:col-span-2 lg:col-span-2" />
+        <SalesOverviewChart className="col-span-1 md:col-span-2 lg:col-span-4" />
+        <RecentSales className="col-span-1 md:col-span-2 lg:col-span-2" />
       </div>
       <div className="grid gap-4 px-8 py-3 lg:grid-cols-6">
         <RegisteredUsersChart
-          className="lg:col-span-2"
+          className="col-span-1 lg:col-span-2"
           premiumUsers={2804}
           basicUsers={742}
         />
-        <Integrations className="md:col-span-2 lg:col-span-4" />
+        <Integrations className="col-span-1 md:col-span-2 lg:col-span-4" />
       </div>
     </div>
   );
